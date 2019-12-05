@@ -69,6 +69,7 @@ class ModelTrainer(object):
 
         # for each iteration
         for iter in range(self.global_step + 1, tt.arg.train_iteration + 1):
+
             if iter%100 == 0: print("The " + str(iter) + " iterations training")
             # init grad
             self.optimizer.zero_grad()
