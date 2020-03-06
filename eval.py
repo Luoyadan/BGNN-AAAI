@@ -3,16 +3,16 @@ os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 
 from torchtools import *
-from data_mod import MiniImagenetLoader, TieredImagenetLoader
-from model_mod import EmbeddingImagenet, GraphNetwork, ConvNet
+from data import MiniImagenetLoader, TieredImagenetLoader
+from model import EmbeddingImagenet, GraphNetwork, ConvNet
 import shutil
 import os
 import random
-from train_mod import ModelTrainer
+from train import ModelTrainer
 
 if __name__ == '__main__':
 
-    tt.arg.test_model = 'D-mini_node_loss_N-10_K-1_U-0_L-1_B-80_C-8_T-True_SEED-222' if tt.arg.test_model is None else tt.arg.test_model
+    tt.arg.test_model = 'D-tiered_edge_N-5_K-1_U-0_L-3_B-64_C-8_T-True_SEED-222' if tt.arg.test_model is None else tt.arg.test_model
 
     list1 = tt.arg.test_model.split("_")
     param = {}
@@ -21,8 +21,11 @@ if __name__ == '__main__':
         if 'att' in list1[i]:
             tt.arg.arch = 'att'
             continue
-        elif 'node' in list1[i] or 'loss' in list1[i]:
+        elif 'node' in list1[i] or 'loss' in list1[i] :
             tt.arg.arch = 'node_loss'
+            continue
+        elif 'edge' in list1[i]:
+            tt.arg.arch = 'edge'
             continue
         param[list1[i].split("-", 1)[0]] = list1[i].split("-", 1)[1]
     tt.arg.dataset = param['D']
@@ -37,7 +40,7 @@ if __name__ == '__main__':
     ####################
     tt.arg.device = 'cuda:0' if tt.arg.device is None else tt.arg.device
     # replace dataset_root with your own
-    tt.arg.dataset_root = '/media/raid5/yadan/egnn_dataset'
+    tt.arg.dataset_root = '/media/bigdata/uqyluo/egnn_dataset'
     tt.arg.dataset = 'mini' if tt.arg.dataset is None else tt.arg.dataset
     tt.arg.num_ways = 5 if tt.arg.num_ways is None else tt.arg.num_ways
     tt.arg.num_shots = 1 if tt.arg.num_shots is None else tt.arg.num_shots

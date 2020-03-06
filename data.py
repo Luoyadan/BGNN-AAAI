@@ -238,7 +238,9 @@ class TieredImagenetLoader(data.Dataset):
                     support_label[i_idx + c_idx * num_shots][t_idx] = c_idx
 
                 # load sample for query set
-                for i_idx in range(num_queries):
+                query_lis = range(num_queries)
+                random.shuffle(query_lis)
+                for i_idx in query_lis:
                     query_data[i_idx + c_idx * num_queries][t_idx] = self.transform(class_data_list[num_shots + i_idx])
                     query_label[i_idx + c_idx * num_queries][t_idx] = c_idx
 

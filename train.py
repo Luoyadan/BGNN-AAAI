@@ -1,7 +1,7 @@
 import os
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 from torchtools import *
 from data import MiniImagenetLoader, TieredImagenetLoader
@@ -411,12 +411,12 @@ if __name__ == '__main__':
 
 
     # replace dataset_root with your own
-    tt.arg.dataset_root = ''
+    tt.arg.dataset_root = '/media/bigdata/uqyluo/egnn_dataset'
     tt.arg.dataset = 'tiered' if tt.arg.dataset is None else tt.arg.dataset
     tt.arg.arch = 'edge'
 
     tt.arg.num_ways = 5 if tt.arg.num_ways is None else tt.arg.num_ways
-    tt.arg.num_shots = 5 if tt.arg.num_shots is None else tt.arg.num_shots
+    tt.arg.num_shots = 1 if tt.arg.num_shots is None else tt.arg.num_shots
     tt.arg.num_unlabeled = 0 if tt.arg.num_unlabeled is None else tt.arg.num_unlabeled
     tt.arg.num_layers = 3
     tt.arg.meta_batch_size = 64 if tt.arg.meta_batch_size is None else tt.arg.meta_batch_size
