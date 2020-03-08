@@ -1,7 +1,7 @@
 import os
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 
 from torchtools import *
 from data import MiniImagenetLoader, TieredImagenetLoader
@@ -419,12 +419,12 @@ if __name__ == '__main__':
     tt.arg.num_shots = 1 if tt.arg.num_shots is None else tt.arg.num_shots
     tt.arg.num_unlabeled = 0 if tt.arg.num_unlabeled is None else tt.arg.num_unlabeled
     tt.arg.num_layers = 3
-    tt.arg.meta_batch_size = 64 if tt.arg.meta_batch_size is None else tt.arg.meta_batch_size
+    tt.arg.meta_batch_size = 128 if tt.arg.meta_batch_size is None else tt.arg.meta_batch_size
     tt.arg.transductive = True
     tt.arg.seed = 222 if tt.arg.seed is None else tt.arg.seed
     tt.arg.num_gpus = 2
 
-    tt.arg.num_cell = 8
+    tt.arg.num_cell = 16
     tt.arg.heads = 8
 
     tt.arg.num_ways_train = tt.arg.num_ways
@@ -445,7 +445,7 @@ if __name__ == '__main__':
     tt.arg.train_iteration = 100000 if tt.arg.dataset == 'mini' else 160000
     tt.arg.test_iteration = 10000
     tt.arg.test_interval = 5000
-    tt.arg.test_batch_size = 32
+    tt.arg.test_batch_size = 64
     tt.arg.log_step = 1000 if tt.arg.log_step is None else tt.arg.log_step
 
     tt.arg.lr = 1e-3

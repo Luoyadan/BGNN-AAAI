@@ -239,6 +239,7 @@ class TieredImagenetLoader(data.Dataset):
 
                 # load sample for query set
                 query_lis = range(num_queries)
+                # query should be shuffled
                 random.shuffle(query_lis)
                 for i_idx in query_lis:
                     query_data[i_idx + c_idx * num_queries][t_idx] = self.transform(class_data_list[num_shots + i_idx])

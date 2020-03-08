@@ -4,7 +4,10 @@
 A PyTorch implementation or our paper "Learning from the Past: Continual Meta-Learning with
 Bayesian Graph Neural Networks"
 
-(unfinished)
+Updated: March 6, 2020
+
+### Log
+- Fix the query shuffle
 
 
 ### Requirements
