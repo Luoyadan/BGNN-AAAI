@@ -4,9 +4,10 @@
 A PyTorch implementation or our paper "Learning from the Past: Continual Meta-Learning with
 Bayesian Graph Neural Networks"
 
-Updated: March 6, 2020
+Updated: April 22, 2020
 
 ### Log
+- Update README
 - Fix the query shuffle
 
 
@@ -78,7 +79,7 @@ Please cite the following paper in your publications if it helps your research
       archivePrefix = {arXiv},
       eprint    = {1911.04695},
       timestamp = {Mon, 02 Dec 2019 13:44:01 +0100},
-      biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1911-04695},
+      biburl    = {https://dblp.org/rec/journals/corr/abs-1911-04695.bib},
       bibsource = {dblp computer science bibliography, https://dblp.org}
     }
     
