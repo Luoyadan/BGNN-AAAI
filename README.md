@@ -63,23 +63,26 @@ python3 eval.py -test_model "THE_MODEL_NAME"
 
 Please cite the following paper in your publications if it helps your research
 
-    @article{DBLP:journals/corr/abs-1911-04695,
+    @inproceedings{DBLP:conf/aaai/LuoHZWBY20,
       author    = {Yadan Luo and
                    Zi Huang and
                    Zheng Zhang and
                    Ziwei Wang and
                    Mahsa Baktashmotlagh and
                    Yang Yang},
-      title     = {Learning from the Past: Continual Meta-Learning via Bayesian Graph
-                   Modeling},
-      journal   = {CoRR},
-      volume    = {abs/1911.04695},
-      year      = {2019},
-      url       = {http://arxiv.org/abs/1911.04695},
-      archivePrefix = {arXiv},
-      eprint    = {1911.04695},
-      timestamp = {Mon, 02 Dec 2019 13:44:01 +0100},
-      biburl    = {https://dblp.org/rec/journals/corr/abs-1911-04695.bib},
+      title     = {Learning from the Past: Continual Meta-Learning with Bayesian Graph
+                   Neural Networks},
+      booktitle = {The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI}
+                   2020, The Thirty-Second Innovative Applications of Artificial Intelligence
+                   Conference, {IAAI} 2020, The Tenth {AAAI} Symposium on Educational
+                   Advances in Artificial Intelligence, {EAAI} 2020, New York, NY, USA,
+                   February 7-12, 2020},
+      pages     = {5021--5028},
+      year      = {2020},
+      crossref  = {DBLP:conf/aaai/2020},
+      url       = {https://aaai.org/ojs/index.php/AAAI/article/view/5942},
+      timestamp = {Thu, 04 Jun 2020 16:49:55 +0200},
+      biburl    = {https://dblp.org/rec/conf/aaai/LuoHZWBY20.bib},
       bibsource = {dblp computer science bibliography, https://dblp.org}
     }
     
